@@ -1,0 +1,7 @@
+## Interface: 90002
+## Title: Toast Gambling Suite
+## Notes: A suite of gambling games for your groups!
+## Author: ToastyDev
+## SavedVariablesPerCharacter: Leaderboard
+
+core.lua
