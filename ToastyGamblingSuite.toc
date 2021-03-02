@@ -2,6 +2,6 @@
 ## Title: Toast Gambling Suite
 ## Notes: A suite of gambling games for your groups!
 ## Author: ToastyDev
-## SavedVariablesPerCharacter: Leaderboard
+## SavedVariablesPerCharacter: ToastLeaderboard
 
 core.lua
