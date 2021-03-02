@@ -42,6 +42,8 @@ function SlashCmdList.TOASTYGAMBLINGSUITE(cmd, editBox)
     print("Toast Gambling Leaderboard opened")
   elseif request == "show" then
     print("Toast Gampling host frame")
+  elseif request == "test" then
+    RollButtonFrame()
   else
     print("Toast Gambling host frame")
   end
@@ -71,6 +73,18 @@ function RollTrackerFrame()
 end
 
 function RollButtonFrame()
+  if not rollFrame then
+    rollFrame = CreateFrame("Frame", "RollButtonFrame", UIParent, "DialogBoxFrame")
+    rollFrame:SetPoint("CENTER")
+    rollFrame:SetSize(50, 50)
+    rollFrame:SetBackdrop({
+      bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
+      edgeFile = "Interface\\PVPFrame\\UI-Character-PVP-Highlight",
+      edgeSize = 16,
+      insets = {left = 8, right = 8, top = 8, bottom = 8}
+    })
+  end
+  rollFrame:Show()
   --Frame
   --border
   --die texture
