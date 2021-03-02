@@ -31,8 +31,8 @@ EventFrame:SetScript("OnEvent", eventFrameParse)
 SLASH_TOASTYGAMBLINGSUITE1 = "/tgs"
 SLASH_TOASTYGAMBLINGSUITE2 = "/toastgambling"
 
-function SlashCommandList.TOASTYGAMBLINGSUITE(cmd, editBox)
-  local request, arg, value = strsplit(' ', cmd, 3)
+function SlashCmdList.TOASTYGAMBLINGSUITE(cmd, editBox)
+  local request, value = strsplit(' ', cmd, 3)
   request = request.lower(request)
   if request == "hilo" then
     print("HiLo started with bid " .. value .. " gold")
