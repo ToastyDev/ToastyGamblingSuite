@@ -13,6 +13,7 @@ local anteValue = 0
 -- bind events
 local eventFrame = CreateFrame("Frame", "EventFrame")
 EventFrame:RegisterEvent("ADDON_LOADED")
+EventFrame:RegisterEvent("CHAT_MSG_SYSTEM")
 EventFrame:RegisterEvent("PLAYER_LOGOUT")
 
 function eventFrameParse(self, event, arg1)
@@ -43,7 +44,9 @@ function SlashCmdList.TOASTYGAMBLINGSUITE(cmd, editBox)
   elseif request == "show" then
     print("Toast Gampling host frame")
   elseif request == "test" then
-    RollButtonFrame()
+    RollTrackerFrame()
+  elseif request == "help" then
+    print("Make help you monkey")
   else
     print("Toast Gambling host frame")
   end
@@ -64,6 +67,17 @@ function LeaderboardFrame()
 end
 
 function RollTrackerFrame()
+  if not rollTrackerFrame then
+    rollTrackerFrame = CreateFrame("Frame", "RollTrackerFrame", UIParent)
+    rollTrackerFrame:SetPoint("LEFT")
+    rollTrackerFrame:SetSize(200, 500)
+
+    local tex = rollTrackerFrame:CreateTexture(nil, "BACKGROUND")
+    tex:SetTexture("Interface\\Icons\\INV_Misc_Dice_01")
+    tex:SetAllPoints(rollTrackerFrame)
+    rollTrackerFrame.texture = tex
+  end
+  rollTrackerFrame:Show()
   --create Frame
   --background
   --border
@@ -85,8 +99,6 @@ function RollButtonFrame()
     })
   end
   rollFrame:Show()
-  --Frame
-  --border
   --die texture
   --bind DoRoll
   --overlay checkmark
@@ -115,3 +127,9 @@ end
 function DoRoll(highNumber)
   RandomRoll(1, highNumber)
 end
+
+--get player list
+-- update roll list
+--get roll value (parse event chat msg system)
+--sort Rolls
+-- reverse sort rolls
